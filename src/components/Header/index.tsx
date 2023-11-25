@@ -1,5 +1,5 @@
 import banner from '../../assets/pokedex-banner.png'
-import greeatball from '../../assets/greatball.png'
+import greatball from '../../assets/greatball.png'
 import { Link } from 'react-router-dom'
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
         </nav>
         <nav className="flex flex-wrap items-center text-base">
           <Link to="/bookmarks">
-            <img src={greeatball} alt="Great ball" className='h-8' />
+            <img src={greatball} alt="Great ball" className='h-8' />
           </Link>
         </nav>
       </div>

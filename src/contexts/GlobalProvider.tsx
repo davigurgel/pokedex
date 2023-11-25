@@ -51,12 +51,13 @@ export default function GlobalProvider({ children }: { children: ReactNode }) {
       handleUpdateBookmark,
       isBookmarked,
       setParams,
+      bookmarks,
     }),
     [
       pokemons,
       handleUpdateBookmark,
       isBookmarked,
-      setParams,
+      bookmarks
     ],
   )
 

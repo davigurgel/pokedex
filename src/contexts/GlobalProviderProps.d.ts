@@ -7,4 +7,5 @@ export type GlobalProviderProps = {
   handleUpdateBookmark: (pokemon: PokemonProps) => void
   isBookmarked: (pokemon: PokemonProps) => boolean
   setParams: (value: string | undefined) => void
+  bookmarks: PokemonProps[]
 }

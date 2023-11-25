@@ -1,5 +1,9 @@
+import BookmarksList from "../../components/BookmarksList"
+
 const Bookmarks = () => {
-  return <div>Bookmarks</div>
+  return (
+      <BookmarksList />
+  )
 }
 
 export default Bookmarks

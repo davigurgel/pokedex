@@ -9,7 +9,7 @@ export const getPokemons = async (params: string) => {
   return response.data
 }
 
-export const useGetPokemons = (params: string = 'limit=20&offset=0') => {
+export const useGetPokemons = (params: string | undefined = 'limit=20&offset=0') => {
   return useQuery({
     queryKey: [KEYS.pokemons],
     queryFn: () => getPokemons(params),

@@ -7,7 +7,7 @@ const DISABLED_BUTTON = 'text-sm bg-[#a8b8c8] text-white font-semibold py-2 px-4
 
 const Pagination = () => {
   const {
-    pokemons: { data: { next, previous } },
+    pokemons: { data },
     setParams,
   } = useContext(GlobalContext)
 
@@ -19,21 +19,21 @@ const Pagination = () => {
     setParams(params)
   }, [setParams])
 
-  return (
+  return data?.results.length && (
     <div
-      className="px-5 py-5 border-t flex flex-col xs:flex-row items-center xs:justify-between">
-      <div className="inline-flex mt-2 xs:mt-0">
+      className="flex flex-col xs:flex-row items-center xs:justify-between">
+      <div className="inline-flex">
           <button
-            onClick={() => handleClick(previous)}
-            disabled={!previous}
-            className={`${previous ? DEFAULT_BUTTON : DISABLED_BUTTON} rounded-l`}
+            onClick={() => handleClick(data?.previous)}
+            disabled={!data?.previous}
+            className={`${data?.previous ? DEFAULT_BUTTON : DISABLED_BUTTON} rounded-l`}
           >
               {i18n.t('pagination.previous')}
           </button>
           <button
-            onClick={() => handleClick(next)}
-            disabled={!next}
-            className={`${next ? DEFAULT_BUTTON : DISABLED_BUTTON} rounded-r`}
+            onClick={() => handleClick(data?.next)}
+            disabled={!data?.next}
+            className={`${data?.next ? DEFAULT_BUTTON : DISABLED_BUTTON} rounded-r`}
           >
               {i18n.t('pagination.next')}
           </button>

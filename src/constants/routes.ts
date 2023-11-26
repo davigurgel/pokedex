@@ -1,5 +1,5 @@
 export const ROUTES = {
   home: '/',
   bookmarks: '/bookmarks',
-  pokemon: '/product/:id',
+  pokemon: '/pokemon/:slug',
 } as const

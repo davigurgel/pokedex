@@ -17,7 +17,7 @@ const ListItem = ({ pokemon }: { pokemon: PokemonProps }) => {
           <div className="text-lg font-semibold capitalize text-center">{`#${pokemonId} - ${pokemon.name}`}</div>
           <div className="cursor-pointer" onClick={() => handleUpdateBookmark(pokemon)}>{isBookmarked(pokemon) ? <Bookmark fill='#70b8f0' color='#70b8f0' /> : <Bookmark />}</div>
         </div>
-        <Link to={`/pokemon/${pokemonId}`}>
+        <Link to={`/pokemon/${pokemon.name}`}>
           <img
             alt={pokemon.name}
             src={pokemonImage}

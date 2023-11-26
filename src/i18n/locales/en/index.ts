@@ -11,4 +11,12 @@ export const enUS = {
     previous: 'Previous',
     description: 'Showing {{current}} of {{total}} Pokemons'
   },
+  single: {
+    height: 'Height:',
+    stats: 'Stats:',
+    weight: 'Weight',
+    abilities: 'Abilities',
+    games: 'Games',
+    types: 'Types'
+  }
 } as const

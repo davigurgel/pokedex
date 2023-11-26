@@ -27,6 +27,7 @@ const Pokemon = () => {
               alt={data.name}
               src={pokemonImage}
               className="m-auto md:w-1/2"
+              loading="lazy"
             />
             <div className="md:w-1/2 w-full p-6 mt-6 lg:mt-0 h-[700px] overflow-y-auto ">
               <div className="flex items-center justify-between">

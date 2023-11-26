@@ -21,7 +21,8 @@ const ListItem = ({ pokemon }: { pokemon: PokemonProps }) => {
           <img
             alt={pokemon.name}
             src={pokemonImage}
-            className="m-auto mt-2 rounded-lg"
+            className="m-auto mt-2"
+            loading="lazy"
           />
         </Link>
       </div>

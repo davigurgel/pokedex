@@ -2,8 +2,11 @@
 import { useContext, useEffect, useMemo } from "react"
 import { redirect, useParams } from "react-router-dom"
 import { useGetSinglePokemon } from "../../hooks/useGetSinglePokemon"
-import { Bookmark, ChevronDown } from "react-feather"
+import { Star, ChevronDown } from "react-feather"
 import { GlobalContext } from "../../contexts/GlobalProvider"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import 'react-lazy-load-image-component/src/effects/blur.css'
+import pokeball from '../../assets/pokeball.png'
 import { i18n } from "../../i18n"
 
 const Pokemon = () => {
@@ -23,11 +26,15 @@ const Pokemon = () => {
       <section className="overflow-hidden">
         <div className="container px-5 py-24 mx-auto">
           <div className="mx-auto p-5 flex flex-wrap items-center justify-center bg-white shadow-md">
-            <img
+            <LazyLoadImage
               alt={data.name}
               src={pokemonImage}
               className="m-auto md:w-1/2"
-              loading="lazy"
+              effect='blur'
+              placeholderSrc={pokeball}
+              wrapperProps={{
+                style: {transitionDelay: "1s"},
+              }}
             />
             <div className="md:w-1/2 w-full p-6 mt-6 lg:mt-0 h-[700px] overflow-y-auto ">
               <div className="flex items-center justify-between">
@@ -35,7 +42,7 @@ const Pokemon = () => {
                   {`#${data.id} - ${data.name.charAt(0).toUpperCase()}${data.name.slice(1)}`}
                 </h1>
                 <div className="cursor-pointer" onClick={() => handleUpdateBookmark(data.forms[0])}>
-                  {isBookmarked(data.forms[0]) ? <Bookmark fill='#70b8f0' color='#70b8f0' /> : <Bookmark />}
+                  {isBookmarked(data.forms[0]) ? <Star size={18} fill='#70b8f0' color='#70b8f0' /> : <Star size={18} />}
                 </div>
               </div>
               <hr className="my-4" />
